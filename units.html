@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EM/PX/REM</title>
+    <style>
+        *{ margin: 0; padding: 0; }
+        body{ font-size: 100% }
+        .common{ font-size: .8em; padding-left: 20px; }
+    </style>
+</head>
+<body>
+<ul class="parent common">
+    <li>Big</li>
+    <li>
+        Big
+        <ul class="child common">
+            <li>Small</li>
+            <li>Small</li>
+            <li>Small</li>
+            <li>
+                Small
+                <ul class="last-child common">
+                    <li>Smallest</li>
+                    <li>Smallest</li>
+                    <li>Smallest</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Big</li>
+    <li>Big</li>
+    <li>Big</li>
+</ul>
+</body>
+</html>
