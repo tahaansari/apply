@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Images</title>
+    <style>
+        *{margin:0;padding:0} 
+        img{max-width: 100%}
+        .img{
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            background-image: url(http://via.placeholder.com/500x500);
+            background-image: image-set( url(http://via.placeholder.com/500x500) 1x, url(http://via.placeholder.com/1000x1000) 2x );
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <!-- <picture>
+        <source media="(min-width: 768px)" srcset="http://via.placeholder.com/1000x1000">
+        <img src="http://via.placeholder.com/500x500">
+    </picture> -->
+    <!-- <img srcset="http://via.placeholder.com/1000x1000, http://via.placeholder.com/500x500" alt="…"> -->
+    <div class="img"></div>
+</body>
+</html>
