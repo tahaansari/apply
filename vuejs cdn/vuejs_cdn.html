@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs cdn</title>
+    <style>
+        *{ margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        Button was clicked {{total}} times.
+        <br>
+        <comp-button @increment="incrementTotal"></comp-button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="comp-button.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                total:0
+            },
+            methods:{
+                incrementTotal:function(){
+                    this.total++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

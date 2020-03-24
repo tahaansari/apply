@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React CDN</title>
+    <style>
+        *{margin: 0;padding: 0;}
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" 
+    integrity="sha256-FiZMk1zgTeujzf/+vomWZGZ9r00+xnGvOgXoj0Jo1jA="  crossorigin="anonymous"></script>
+    <script type="text/babel">
+        class Car extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+                    make:'Honda',
+                    model:'City',
+                    year:2003
+                }
+            }
+            static getDerivedStateFromProps(props,state){
+                return { year: props.year }
+            }
+            changeYear = () => {
+                this.setState( {year:2020} )
+            }
+            render(){
+                return (
+                    <div>
+                        <h1>Make is {this.state.make}</h1>
+                        <h2>Model is {this.state.model}</h2>
+                        <h3>Year is {this.state.year}</h3>
+                        <button type="button" onClick={this.changeYear}>Change year</button>
+                    </div>
+                )
+                
+            }
+        }
+        ReactDOM.render(<Car year='2022'  />, document.getElementById('app'))
+    </script>
+</body>
+</html>
